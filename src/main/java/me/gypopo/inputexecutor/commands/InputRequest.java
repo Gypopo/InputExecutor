@@ -21,7 +21,7 @@ public class InputRequest extends BukkitCommand {
     public InputRequest(Main plugin) {
         super("inputrequest");
         this.description = "Requests input from the given player and executes a command";
-        this.usageMessage = "/inputrequest request:\"<request>\" command:\"<completeCommand>\"";
+        this.usageMessage = "/inputrequest player:<player> request:'<request>' command:'<completeCommand>'";
         this.setAliases(Collections.singletonList("input"));
 
         this.plugin = plugin;
@@ -52,7 +52,7 @@ public class InputRequest extends BukkitCommand {
 
             return true;
         } catch (ArrayIndexOutOfBoundsException e) {
-            sender.sendMessage(ChatColor.RED + "Invalid command syntax. Example: ");
+            sender.sendMessage(ChatColor.RED + "Invalid command syntax. Example: /inputrequest player:<player> request:'<request>' command:'<completeCommand>'");
             return false;
         }
     }
