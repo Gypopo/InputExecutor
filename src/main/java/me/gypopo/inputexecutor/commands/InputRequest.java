@@ -41,7 +41,9 @@ public class InputRequest extends BukkitCommand {
             new AnvilGUI.Builder()
                     .onComplete((completion) -> {
                         if (!completion.getText().isEmpty())
-                            this.executeCommand(p, this.getString(cmd.split("command:")[1]).replace("%player%", p.getName()).replace("%input%", completion.getText()));
+                            this.executeCommand(p, this.getString(cmd.split("command:")[1])
+                                    .replace("%player%", p.getName())
+                                    .replace("%input%", ChatColor.translateAlternateColorCodes('&', completion.getText())));
                         return Collections.singletonList(AnvilGUI.ResponseAction.close());
                     })
                     .text(" ")
