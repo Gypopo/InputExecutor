@@ -1,5 +1,5 @@
 name: InputInjector
-version: '1.0.0'
+version: '1.0.1'
 main: me.gypopo.inputexecutor.Main
 description: Creates a command which asks for custom input of the player
 api-version: '1.19'
