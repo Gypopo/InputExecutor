@@ -39,11 +39,11 @@ public class InputRequest extends BukkitCommand {
             }
 
             new AnvilGUI.Builder()
-                    .onComplete((completion) -> {
-                        if (!completion.getText().isEmpty())
+                    .onClick((i, state) -> {
+                        if (!state.getText().isEmpty())
                             this.executeCommand(p, this.getString(cmd.split("command:")[1])
                                     .replace("%player%", p.getName())
-                                    .replace("%input%", ChatColor.translateAlternateColorCodes('&', completion.getText())));
+                                    .replace("%input%", ChatColor.translateAlternateColorCodes('&', state.getText())));
                         return Collections.singletonList(AnvilGUI.ResponseAction.close());
                     })
                     .text(" ")
